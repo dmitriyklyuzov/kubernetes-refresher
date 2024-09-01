@@ -29,7 +29,7 @@
 **Deployment** - blueprint for a Pod, abstraction of a Pod
 * used for stateLESS applications
 * you create Deployments rather than working with Pods directly
-* you can scale the number of replicas you need
+* you can scale the number of replicas you need using a replicaset
 * databases can’t be replicated using Deployments
 
 **StatefulSet** - component for stateFULL Applications
@@ -61,6 +61,13 @@
 **Secret** - used to store secret data (passwords, certificates)
 * stored in base64, not plaintext
 * the built-in security mechanism is not enabled by default
+
+## Layers of Abstraction
+
+* Deployment manages a ReplicaSet
+* ReplicaSet manages a Pod
+* Pod is an abstraction of a container
+* Everything below a Deployment is managed by Kubernetes
 
 ## minikube
 * Creates a Virtual Box on your local machine

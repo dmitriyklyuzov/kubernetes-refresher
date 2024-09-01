@@ -61,3 +61,47 @@
 **Secret** - used to store secret data (passwords, certificates)
 * stored in base64, not plaintext
 * the built-in security mechanism is not enabled by default
+
+## minikube
+* Creates a Virtual Box on your local machine
+* A single Node runs both Master and Worker processes
+* minicube CLI is used mostly for starting up or deleting the cluster
+* everything else will be done with `kubectl`
+
+```bash
+minikkube start --vm-driver=hyperkit
+minikube status
+```
+
+## kubectl
+* CLI tool for Kubernetes clusters (minikube or Cloud)
+* way to interact with a cluster
+
+### CRUD commands
+
+```bash
+# create deployment
+kubectl create deployment [name]
+
+# edit deployment
+kubectl edit deployment [name]
+
+# delete deployment
+kubectl delete deployment [name]
+```
+
+### Status of different K8s components
+
+```bash
+kubectl get nodes | pod | services | replicaset | deployment
+```
+
+### Debugging pods
+
+```bash
+# view logs
+kubectl logs [pod name]
+
+# get interactive terminal
+kubectl exec -it [pod name] --bin/bash
+```

@@ -121,4 +121,7 @@ kubectl exec -it [pod name] -- bin/bash
 ```bash
 # Create/update deployment
 kubectl apply -f nginx-deployment.yaml
+
+# Delete with a configuration file
+kubectl delete -f nginx-deployment.yaml
 ```

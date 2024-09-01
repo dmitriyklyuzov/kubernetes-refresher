@@ -115,3 +115,10 @@ kubectl describe pod [pod name]
 # get interactive terminal
 kubectl exec -it [pod name] -- bin/bash
 ```
+
+### Working with configuration files
+
+```bash
+# Create/update deployment
+kubectl apply -f nginx-deployment.yaml
+```

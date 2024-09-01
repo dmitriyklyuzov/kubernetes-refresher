@@ -109,6 +109,9 @@ kubectl get nodes | pod | services | replicaset | deployment
 # view logs
 kubectl logs [pod name]
 
+# get additional details
+kubectl describe pod [pod name]
+
 # get interactive terminal
 kubectl exec -it [pod name] --bin/bash
 ```

@@ -69,6 +69,16 @@
 * Pod is an abstraction of a container
 * Everything below a Deployment is managed by Kubernetes
 
+## Configuration files
+
+`kind` specifies the component kind ('Deployment', 'Service', etc). This determines what attributes are available in "spec".
+
+Each configuration file has 3 main parts:
+
+1. `metadata` - name of the component, etc.
+2. `spec` - component specification. Replias, selector, template, ports, etc. Set of available attributes depends on the component "kind".
+3. `status` - this is automatically generated and continuously updated by Kubernetes so that it can compare the desired state (config file) to the actual state (etcd). This is the basis of the self-healing feature that K8s provides.
+
 ## minikube
 * Creates a Virtual Box on your local machine
 * A single Node runs both Master and Worker processes

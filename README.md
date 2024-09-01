@@ -113,5 +113,5 @@ kubectl logs [pod name]
 kubectl describe pod [pod name]
 
 # get interactive terminal
-kubectl exec -it [pod name] --bin/bash
+kubectl exec -it [pod name] -- bin/bash
 ```

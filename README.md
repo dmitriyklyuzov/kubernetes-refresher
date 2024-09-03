@@ -79,6 +79,11 @@ Each configuration file has 3 main parts:
 2. `spec` - component specification. Replias, selector, template, ports, etc. Set of available attributes depends on the component "kind".
 3. `status` - this is automatically generated and continuously updated by Kubernetes so that it can compare the desired state (config file) to the actual state (etcd). This is the basis of the self-healing feature that K8s provides.
 
+### Spec
+
+* Templates have their own "metadata" and "spec" sections that apply to Pods. They are like Blueprints for Pods.
+* Labels & Selectors - used for establishing a connection. Label labels the entity itself, and selector is what lets it connect to other entities by their own labels. Pod gets a label through the template blueprint. This label is matched by the selector.
+
 ## minikube
 * Creates a Virtual Box on your local machine
 * A single Node runs both Master and Worker processes
@@ -110,7 +115,7 @@ kubectl delete deployment [name]
 ### Status of different K8s components
 
 ```bash
-kubectl get nodes | pod | services | replicaset | deployment
+kubectl get nodes | pod | services | replicaset | deployment | all
 ```
 
 ### Debugging pods
